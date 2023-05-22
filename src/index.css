@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.announcement_text {
+  animation: slider 10s linear infinite;
+}
+
+@keyframes slider {
+  0% {
+    color: green;
+    transform: translateX(0);
+  }
+
+  100% {
+    color: rgb(239, 63, 10);
+    transform: translateX(100%);
+  }
+}

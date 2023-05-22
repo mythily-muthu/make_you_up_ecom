@@ -3,15 +3,19 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-const Content = () => {
+import Cart from "../pages/Cart";
+import Order from "../pages/Order";
+import ProductsList from "../pages/ProductsList";
+const Content = ({ showNavbarFooter }) => {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/order" element={<Order />} />
+      <Route path="/productlist" element={<ProductsList />} />
+    </Routes>
   );
 };
 

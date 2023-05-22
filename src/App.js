@@ -6,16 +6,14 @@ import Content from "./components/Content";
 import Footer from "./components/Footer";
 function App() {
   return (
-    <div className="w-screen h-screen ">
+    <div className="flex flex-col w-screen min-h-screen  ">
       <Router>
         {/* headers */}
-        <Topbar />
-        <Navbar />
-        <Add />
-        {/* content */}
+
+
         <Content />
         {/* footer */}
-        <Footer />
+
       </Router>
     </div>
   );
