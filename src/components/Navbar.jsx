@@ -9,7 +9,7 @@ const Navbar = () => {
   const navItems = [
     {
       title: "Explore",
-      link: "/explore",
+      link: "/productlist",
     },
     {
       title: "Login",
@@ -23,9 +23,9 @@ const Navbar = () => {
 
   return (
     <div className="flex w-full h-16 border border-b justify-between items-center">
-      <div className="flex w-[80%] h-full justify-between items-center mx-auto ">
+      <div className="flex w-[70%] h-full justify-between items-center mx-auto ">
         <p
-          className="text-3xl text-primary hover:text-primary hover:cursor-pointer"
+          className="text-3xl text-primary hover:cursor-pointer"
           onClick={() => {
             navigate("/");
           }}
@@ -33,6 +33,11 @@ const Navbar = () => {
           Make You Up
         </p>
 
+        <input
+          className="border border-gray-400 p-1 bg-slate-50 rounded-md"
+          type="text"
+          placeholder="Search on Nykaa"
+        />
         {navItems.map((item) => {
           return (
             <div className=" flex hover:cursor-pointer text-lg font-medium">
@@ -64,12 +69,6 @@ const Navbar = () => {
             e.preventDefault();
             navigate("/order");
           }}
-        />
-
-        <input
-          className="border border-gray-400 px-1 py-2 bg-gray-100 rounded-md"
-          type="text"
-          placeholder="Search on Nykaa"
         />
       </div>
     </div>
