@@ -7,6 +7,7 @@ import Cart from "../pages/Cart";
 import Order from "../pages/Order";
 import ProductsList from "../pages/ProductsList";
 import Product from "../pages/Product";
+import Users from "../pages/Users";
 const Content = ({ showNavbarFooter }) => {
   return (
     <Routes>
@@ -17,6 +18,7 @@ const Content = ({ showNavbarFooter }) => {
       <Route path="/order" element={<Order />} />
       <Route path="/product/:productid" element={<Product />} />
       <Route path="/productlist" element={<ProductsList />} />
+      <Route path="/users" element={<Users />} />
     </Routes>
   );
 };

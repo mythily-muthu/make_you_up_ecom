@@ -2,9 +2,14 @@ import React, { Children, useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../redux/userSlice";
 
 const Login = () => {
   const [data, setData] = useState("");
+  let navigate = useNavigate();
+  let dispatch = useDispatch();
   let initialValues = {
     email: "",
     password: "",
@@ -22,10 +27,12 @@ const Login = () => {
 
   const handleSubmit = async (values) => {
     console.log("formik", values);
-    let apiUrl = "https://mythu-ecommerce-app.onrender.com/auth/login";
+    let apiUrl = "https://thinroot-ecom-api.onrender.com/api/auth/login";
     let res = await axios.post(apiUrl, values);
     console.log(res.data);
     setData(res.data);
+    dispatch(loginSuccess(res.data.userDetails));
+    navigate("/");
   };
 
   return (

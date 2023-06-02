@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { BsCart4 } from "react-icons/bs";
 import { BiShoppingBag } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  let user = useSelector((state) => state.user.user);
+  console.log("user:", user);
   const [activePage, setActivePage] = useState("/");
   const navigate = useNavigate();
   const navItems = [
@@ -32,6 +35,7 @@ const Navbar = () => {
         >
           Make You Up
         </p>
+        <p>{user.name}</p>
 
         <input
           className="border border-gray-400 p-1 bg-slate-50 rounded-md"

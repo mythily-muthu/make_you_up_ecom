@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Add from "../components/Add";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Footer from "../components/Footer";
 
 const Product = () => {
   const [productDetails, setProductDetails] = useState({});
@@ -18,6 +19,7 @@ const Product = () => {
     setLoading(false);
   };
 
+  //component did mount
   useEffect(() => {
     getProductDetails();
   }, []);
@@ -27,7 +29,23 @@ const Product = () => {
       <Topbar />
       <Navbar />
       <Add />
-      {loading ? <p>Loading...</p> : <div>{productDetails?.name}</div>}
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className=" w-full h-full bg-slate-500">
+          <div className="flex w-full h-full bg-slate-500">
+            <div className="flex w-[550px] h-[600px]">
+              <img
+                src={productDetails.image_link}
+                alt={productDetails.name}
+                className="bg-red-400  "
+              />
+            </div>
+            <div className="w-1/2"> sfg</div>
+          </div>
+        </div>
+      )}
+      <Footer />
     </div>
   );
 };
